@@ -53,22 +53,22 @@ async function gerarPDF() {
     doc.text("Total", 170, y);
     y += 10;
 
-let subTotal = 0;
-doc.setFont("helvetica", "normal");
-itens.forEach((item) => {
-    const descricao = item.querySelector('.descricao').value;
-    const quantidade = parseInt(item.querySelector('.quantidade').value || 0);
-    const precoUnit = parseFloat(item.querySelector('.preco_unit').value.replace(',', '.') || 0);
-    const total = quantidade * precoUnit;
+    let subTotal = 0;
+    doc.setFont("helvetica", "normal");
+    itens.forEach((item) => {
+        const descricao = item.querySelector('.descricao').value;
+        const quantidade = parseInt(item.querySelector('.quantidade').value || 0);
+        const precoUnit = parseFloat(item.querySelector('.preco_unit').value.replace(',', '.') || 0);
+        const total = quantidade * precoUnit;
 
-    subTotal += total;
+        subTotal += total;
 
-    doc.text(descricao, 10, y);
-    doc.text(quantidade.toString(), 90, y);
-    doc.text(formatarMoeda(precoUnit), 130, y);
-    doc.text(formatarMoeda(total), 170, y);
-    y += 10;
-});
+        doc.text(descricao, 10, y);
+        doc.text(quantidade.toString(), 90, y);
+        doc.text(formatarMoeda(precoUnit), 130, y);
+        doc.text(formatarMoeda(total), 170, y);
+        y += 10;
+    });
 
     // Calcular desconto em reais
     const desconto = (subTotal * descontoPorcentagem) / 100;
@@ -96,6 +96,7 @@ itens.forEach((item) => {
     y += 10;
     doc.text("Validade da proposta: 15 dias.", 10, y);
 
-    // Disponibilizar PDF para download
-    doc.save('orcamento.pdf');
+    const nomeArquivo = empresa.trim() + " orçamento";
+
+    doc.save(nomeArquivo + '.pdf');
 }
