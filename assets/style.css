@@ -6,16 +6,6 @@
     --primary-color: #6200ea;
 }
 
-[data-theme="light"] {
-    --background: var(--background-light);
-    --text: var(--text-light);
-}
-
-[data-theme="dark"] {
-    --background: var(--background-dark);
-    --text: var(--text-dark);
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -79,12 +69,12 @@ button:hover {
     border-radius: 5px;
     background-color: var(--background);
     display: block;
-    clear: both;    
+    clear: both;
 }
 
 .item input {
-    width: 96%; 
-    margin-bottom: 10px; 
+    width: 96%;
+    margin-bottom: 10px;
 }
 
 .theme-switch {
@@ -102,21 +92,47 @@ body.light {
     color: #000000;
 }
 
-/* Tema escuro */
 body.dark {
     background-color: #121212;
     color: #ffffff;
 }
 
+/* Media Query para dispositivos com largura abaixo de 500px */
 @media (max-width: 500px) {
-    .item {
-        width: 350px;
-        margin-bottom: 15px;
+    body {
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: var(--background);
-        display: block;
-        clear: both;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .item {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .item input {
+        width: 96%; /* Faz com que os inputs ocupem 100% da largura disponível */
+    }
+
+    button {
+        width: 100%; /* Botão ocupa toda a largura disponível */
+        padding: 12px 0;
+        margin-top: 15px;
+    }
+
+    .theme-switch {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .theme-switch button {
+        margin-bottom: 10px;
     }
 }
