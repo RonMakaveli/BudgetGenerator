@@ -72,6 +72,7 @@ button:hover {
 }
 
 .item {
+    width: 700px;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -82,7 +83,7 @@ button:hover {
 }
 
 .item input {
-    width: 100%; 
+    width: 96%; 
     margin-bottom: 10px; 
 }
 
