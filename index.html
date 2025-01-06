@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Orçamentos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <h1>Gerador de Orçamentos</h1>
+    <form id="formulario">
+        <label>Empresa:</label>
+        <input type="text" id="empresa" required><br><br>
+
+        <label>Contato:</label>
+        <input type="text" id="contato" required><br><br>
+
+        <label>Telefone:</label>
+        <input type="text" id="telefone" required><br><br>
+
+        <label>E-mail:</label>
+        <input type="email" id="email" required><br><br>
+
+        <h3>Itens</h3>
+        <div id="itens"></div>
+        <button type="button" onclick="adicionarItem()">Adicionar Item</button><br><br>
+
+        <label>Desconto (%):</label>
+        <input type="text" id="desconto" placeholder="Ex: 5 para 5%"><br><br>
+
+        <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+    </form>
+    <script src="assets/main.js"></script>
+    <script src="assets/theme.js"></script>
+</body>
+</html>
