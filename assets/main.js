@@ -9,11 +9,11 @@ function adicionarItem() {
     const itemHTML = `
         <div class="item">
             <label>Descrição:</label>
-            <input type="text" class="descricao"><br>
+            <input type="text" class="descricao" placeholder="Ex: Camiseta"><br>
             <label>Quantidade:</label>
-            <input type="number" class="quantidade"><br>
+            <input type="number" class="quantidade" placeholder="Ex: 10"><br>
             <label>Preço Unitário (R$):</label>
-            <input type="text" class="preco_unit"><br><br>
+            <input type="text" class="preco_unit" placeholder="Ex: 25,90"><br>
         </div>
     `;
     itensDiv.insertAdjacentHTML('beforeend', itemHTML);
