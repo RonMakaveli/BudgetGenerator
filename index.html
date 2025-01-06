@@ -34,5 +34,14 @@
     </form>
     <script src="assets/main.js"></script>
     <script src="assets/theme.js"></script>
+    <script>
+            document.getElementById('desconto').addEventListener('input', function (e) {
+            const valor = parseFloat(e.target.value);
+            if (valor < 0 || valor > 25) {
+            alert('Digite um valor entre 0 e 25');
+            e.target.value = '';
+        }
+    });
+    </script>
 </body>
 </html>
